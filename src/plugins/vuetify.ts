@@ -1,7 +1,8 @@
-import { createApp } from 'vue'
+import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
 import 'vuetify/styles'
-import App from './App.vue'
+
+// Importando plugins específicos, como o VToast
 
 const vuetify = createVuetify({
   theme: {
@@ -18,6 +19,4 @@ const vuetify = createVuetify({
   },
 })
 
-const app = createApp(App)
-
-createApp(App).use(vuetify).mount('#app')
+export default vuetify
