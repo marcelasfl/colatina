@@ -1,10 +1,6 @@
-import api from '../api.ts'
+
+import serviceFactory from './factory'
 
 export default function resolucaoService() {
-  const list = async () => {
-    const response = await api.get('/modalidadebolsa/resolucao')
-    return response.data
-  }
-
-  return { list }
+  return serviceFactory('/modalidadebolsa/resolucao')
 }

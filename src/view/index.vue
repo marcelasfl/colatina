@@ -6,12 +6,12 @@ const { list } = resolucaoService()
 const filteredResolucao = ref<Resolucao[]>([])
 const resolucao = ref<Resolucao[]>([])
 
+
 interface Resolucao {
     Numero: string,
     Data: string,
     Ementa: string,
     Link: string,
-    Id: String;
 }
 
 
@@ -27,17 +27,14 @@ onMounted(() => {
     getPosts();
 })
 
-
 const getPosts = async () => {
     try {
         const data = await list();
-        resolucao.value = data.value();
-        console.log('data aqui', data)
+        filteredResolucao.value = data.value;
     } catch (error) {
-        console.log('Deu erro...')
+        console.log('Deu erro...', error);
     }
-}
-
+};
 
 </script>
 
